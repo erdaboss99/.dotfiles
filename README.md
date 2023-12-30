@@ -43,14 +43,14 @@ ln -s ~/.dotfiles/root/.ignore ~/.ignore
 
 ```zsh
 # TMUX config
-# TPM is required! Install it from here [TMUX Plugin Manager](https://github.com/tmux-plugins/tpm)
+# TPM is required! Install it from here https://github.com/tmux-plugins/tpm
 ln -s ~/.dotfiles/root/.tmux.conf ~/.tmux.conf
 ```
 
 ```zsh
 # BACKUP ONLY
 # NVChad custom config folder
-# NVChad is required! Install it from here [NVChad](https://nvchad.com/docs/quickstart/install)
+# NVChad is required! Install it from here https://nvchad.com/docs/quickstart/install
 ln -s ~/.dotfiles/nvchad/custom ~/.config/nvim/lua/custom
 ```
 
