@@ -46,9 +46,9 @@ return {
 						callback = function() lsp_formatting(bufnr) end,
 					})
 				end
+				vim.keymap.set("i", "<C-f>", vim.lsp.buf.format, { desc = "Format current buffer" })
+				vim.keymap.set("n", "<C-f>", vim.lsp.buf.format, { desc = "Format current buffer" })
 			end,
 		}
-
-		vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format, {})
 	end,
 }

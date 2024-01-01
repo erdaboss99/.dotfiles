@@ -1,13 +1,5 @@
 local wezterm = require "wezterm"
 
--- -- https://github.com/wez/wezterm/issues/3731#issuecomment-1592198263
--- local function is_vim(pane)
--- 	local is_vim_env = pane:get_user_vars().IS_NVIM == "true"
--- 	if is_vim_env == true then return true end
--- 	local process_name = string.gsub(pane:get_foreground_process_name(), "(.*[/\\])(.*)", "%2")
--- 	return process_name == "nvim" or process_name == "vim"
--- end
-
 local super_vim_keys_map = {
 	s = utf8.char(0xAA), -- <CMD-s>
 	b = utf8.char(0xAB), -- <CMD-b>
@@ -99,8 +91,8 @@ return {
 	},
 	use_cap_height_to_scale_fallback_fonts = true,
 
-	macos_window_background_blur = 20,
-	window_background_opacity = 0.9,
+	macos_window_background_blur = 10,
+	window_background_opacity = 0.7,
 	window_decorations = "RESIZE",
 	window_padding = {
 		left = 1,

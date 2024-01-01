@@ -2,26 +2,36 @@ return {
 	"hrsh7th/nvim-cmp",
 	event = "InsertEnter",
 	dependencies = {
+		"zbirenbaum/copilot-cmp", -- Source for Copilot
+		"hrsh7th/cmp-buffer", -- Source for text in buffer
+		"hrsh7th/cmp-path", -- Source for file paths
+		"L3MON4D3/LuaSnip", -- Snippet engine
+		"saadparwaiz1/cmp_luasnip", -- for Lua auto completion
+		"rafamadriz/friendly-snippets", -- Snippet library
+		"hrsh7th/cmp-nvim-lsp", -- Source for lsp
 		{
-			"zbirenbaum/copilot-cmp",
-			config = function() require("copilot_cmp").setup() end,
-		},
-		{
-			"L3MON4D3/LuaSnip",
-			dependencies = {
-				"rafamadriz/friendly-snippets",
-				"saadparwaiz1/cmp_luasnip",
-			},
-			config = function() require("luasnip.loaders.from_vscode").lazy_load() end,
-		},
-		{
-			"hrsh7th/cmp-buffer",
-			{ "hrsh7th/cmp-nvim-lsp", config = true },
+			"onsails/lspkind.nvim", -- Pictogram library
+			config = function()
+				require("lspkind").init {
+					symbol_map = {
+						Copilot = "",
+					},
+				}
+			end,
 		},
 	},
 	config = function()
+		require("copilot_cmp").setup()
 		local cmp = require "cmp"
-		require("cmp").setup {
+		local luasnip = require "luasnip"
+		local lspkind = require "lspkind"
+
+		require("luasnip.loaders.from_vscode").lazy_load()
+
+		cmp.setup {
+			completion = {
+				completeopt = "menu,menuone,noselect,preview",
+			},
 			view = {
 				docs = {
 					auto_open = false,
@@ -31,7 +41,6 @@ return {
 				completion = {
 					border = "rounded",
 					winhighlight = "Normal:Pmenu,CursorLine:PmenuSel,FloatBorder:FloatBorder,Search:None",
-					side_padding = 1,
 					scrollbar = false,
 					col_offset = -3,
 					scrolloff = 8,
@@ -42,12 +51,8 @@ return {
 				},
 			},
 			snippet = {
-				expand = function(args) require("luasnip").lsp_expand(args.body) end,
+				expand = function(args) luasnip.lsp_expand(args.body) end,
 			},
-			formatting = {
-				fields = { "abbr", "kind", "menu" },
-			},
-
 			mapping = {
 				["<Up>"] = cmp.mapping.select_prev_item(),
 				["<Down>"] = cmp.mapping.select_next_item(),
@@ -65,11 +70,18 @@ return {
 					end
 				end,
 			},
+			formatting = {
+				format = lspkind.cmp_format {
+					maxwidth = 50,
+					ellipsis_char = "...",
+				},
+			},
 			sources = {
-				{ name = "copilot" },
-				{ name = "nvim_lsp" },
-				{ name = "lua_snip" },
-				{ name = "buffer" },
+				{ name = "copilot", group_index = 1 },
+				{ name = "nvim_lsp", group_index = 1 },
+				{ name = "luasnip", group_index = 1 },
+				{ name = "buffer", group_index = 2 },
+				{ name = "path", group_index = 2 },
 			},
 		}
 	end,

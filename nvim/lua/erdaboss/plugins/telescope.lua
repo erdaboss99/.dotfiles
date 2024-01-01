@@ -23,6 +23,9 @@ return {
 						"--line-number",
 						"--column",
 						"--smart-case",
+						"--hidden",
+						"--glob",
+						"!**/.git/*",
 					},
 					prompt_prefix = "   ",
 					selection_caret = "  ",
@@ -47,7 +50,7 @@ return {
 					file_sorter = require("telescope.sorters").get_fuzzy_file,
 					file_ignore_patterns = {
 						"node_modules",
-						".git",
+						".git/",
 						".next",
 						".DS_Store",
 					},
@@ -86,10 +89,7 @@ return {
 				},
 				pickers = {
 					find_files = {
-						hidden = true,
-					},
-					git_files = {
-						hidden = true,
+						find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
 					},
 				},
 				extensions_list = {

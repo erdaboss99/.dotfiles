@@ -10,6 +10,10 @@ return {
 			not_loaded = "",
 		},
 	},
+	change_detection = {
+		enabled = true,
+		notify = false, -- get a notification when changes are found
+	},
 	performance = {
 		rtp = {
 			disabled_plugins = {

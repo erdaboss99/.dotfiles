@@ -12,7 +12,9 @@ local function keymap(modes, key, action, args)
 end
 
 keymap({ "n", "i" }, "<Char-0xAA>", "<ESC><CMD>w<CR>", { desc = "Save current buffer" }) -- <CMD-s>
-keymap({ "n", "i" }, "<C-q>", "<CMD>qa<CR>", { desc = "Save all buffers and quit" })
+keymap({ "n", "i" }, "<C-s>", "<ESC><CMD>w<CR>", { desc = "Save current buffer" }) -- <Control-s>
+keymap({ "n", "i" }, "<C-q>", "<CMD>qa<CR>", { desc = "Attempt to quit all" })
+keymap({ "n" }, "<TAB>", "<CMD>bnext<CR>", { desc = "Next buffer" })
 
 keymap({ "i" }, "jk", "<ESC>", { desc = "Exit from insert mode" })
 keymap({ "i" }, "kj", "<ESC>", { desc = "Exit from insert mode" })
@@ -36,10 +38,15 @@ keymap({ "v" }, "<A-Up>", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
 
 keymap({ "n" }, "<leader>lg", "<CMD>LazyGit<CR>", { desc = "Open LazyGit" })
 
+keymap({ "n" }, "<leader>ct", "<CMD>Copilot toggle<CR>", { desc = "Toggle Copilot" })
+
 keymap({ "n", "i" }, "<Char-0xAB>", "<ESC><CMD>Neotree toggle<CR>", { desc = "Toggle File Explorer" }) -- <CMD-b>
+keymap({ "n", "i" }, "<C-b>", "<ESC><CMD>Neotree toggle<CR>", { desc = "Toggle File Explorer" }) -- <Control-b>
 
 keymap({ "n" }, "<leader>ff", "<CMD>Telescope find_files<CR>", { desc = "Find files" })
 keymap({ "n" }, "<leader>fw", "<CMD>Telescope live_grep<CR>", { desc = "Find word" })
 keymap({ "n" }, "<leader>fg", "<CMD>Telescope git_files<CR>", { desc = "Find git files" })
-keymap({ "n" }, "<leader>fb", "<CMD>Telescope buffers<CR>", { desc = "Find buffers" })
 keymap({ "n" }, "<leader>fk", "<CMD>Telescope keymaps<CR>", { desc = "Find keymaps" })
+keymap({ "n" }, "<leader>fh", "<CMD>Telescope help_tags<CR>", { desc = "Find help page" })
+keymap({ "n" }, "<leader>fb", "<CMD>Telescope buffers sort_mru=true sort_lastused=true<CR>", { desc = "List buffers" })
+keymap({ "n" }, "<leader>fd", "<CMD>Telescope diagnostics<CR>", { desc = "List diagnostics" })

@@ -43,22 +43,9 @@ return {
 							"warn",
 						},
 						colored = true, -- Displays diagnostics status in color if set to true.
-						always_visible = true, -- Show diagnostics even if there are none.
 					},
 				},
-				lualine_c = {
-					{
-						"buffers",
-						show_filename_only = true, -- Shows shortened relative path when set to false.
-						hide_filename_extension = false, -- Hide filename extension when set to true.
-						show_modified_status = true, -- Shows indicator when the buffer is modified.
-						symbols = {
-							modified = " ●", -- Text to show when the buffer is modified
-							alternate_file = "#", -- Text to show to identify the alternate file
-							directory = "", -- Text to show when the buffer is a directory
-						},
-					},
-				},
+				lualine_c = {},
 				lualine_x = {},
 				lualine_y = {
 					{

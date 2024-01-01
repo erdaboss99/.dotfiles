@@ -5,8 +5,7 @@ return {
 		build = ":TSUpdate",
 		config = function()
 			local config = require "nvim-treesitter.configs"
-			local ft_to_parser = require("nvim-treesitter.parsers").filetype_to_parsername
-			ft_to_parser.mdx = "markdown"
+			vim.treesitter.language.register("markdown", "mdx")
 			config.setup {
 				auto_install = true,
 				highlight = {
@@ -36,7 +35,7 @@ return {
 				incremental_selection = {
 					enable = true,
 					keymaps = {
-						init_selection = "<C-s>",
+						init_selection = "<C-Space>",
 						node_incremental = "<TAB>",
 						node_decremental = "<S-TAB>",
 					},

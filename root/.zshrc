@@ -36,6 +36,7 @@ alias pts='npx playwright show-report'
 
 alias g='lazygit'
 
-PROMPT="%B%F{147}[ %f%n%F{147} @ %f%m%F{147} ] %(5~|%-1~/.../%2~|%3~) %f%b "
+PROMPT="%B%F{147}[%f%n%F{147} @ %f%m%F{147}] %(5~|%-1~/.../%2~|%3~) %f%b "
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+

@@ -14,7 +14,7 @@ return {
 			},
 			close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
 			source_selector = {
-				statusline = true, -- toggle to show selector on statusline
+				statusline = true, -- Toggle to show selector on statusline
 				sources = {
 					{
 						source = "filesystem",
@@ -24,7 +24,7 @@ return {
 			event_handlers = {
 				{
 					event = "file_opened",
-					handler = function(file_path)
+					handler = function()
 						require("neo-tree.command").execute {
 							action = "close",
 						}
