@@ -46,6 +46,7 @@ return {
 						"thumbs.db",
 						"node_modules",
 						".git",
+						".obsidian",
 					},
 				},
 			},
