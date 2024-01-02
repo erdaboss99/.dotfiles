@@ -3,14 +3,6 @@ return {
 	event = "VeryLazy",
 	dependencies = {
 		"MunifTanjim/nui.nvim",
-		{
-			"rcarriga/nvim-notify",
-			config = function()
-				require("notify").setup {
-					background_colour = "#000000",
-				}
-			end,
-		},
 	},
 	config = function()
 		require("noice").setup {
@@ -19,6 +11,13 @@ return {
 					["vim.lsp.util.convert_input_to_markdown_lines"] = true,
 					["vim.lsp.util.stylize_markdown"] = true,
 					["cmp.entry.get_documentation"] = true,
+				},
+			},
+			views = {
+				mini = {
+					win_options = {
+						winblend = 0,
+					},
 				},
 			},
 			presets = {

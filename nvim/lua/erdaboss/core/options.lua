@@ -21,7 +21,7 @@ opt.mouse = "a" -- allow the mouse to be used in neovim
 
 -- Numbers
 opt.number = true -- set numbered lines
-opt.numberwidth = 4 -- set number column width to 2
+opt.numberwidth = 2 -- set number column width to 2
 opt.ruler = false
 opt.relativenumber = true -- set relative numbered lines
 

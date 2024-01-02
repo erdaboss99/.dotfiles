@@ -31,7 +31,7 @@ return {
 	enable_tab_bar = false,
 	font_size = 20.0,
 	macos_window_background_blur = 10,
-	window_background_opacity = 0.75,
+	window_background_opacity = 0.9,
 	font = wezterm.font_with_fallback {
 		{
 			family = "JetBrains Mono",
