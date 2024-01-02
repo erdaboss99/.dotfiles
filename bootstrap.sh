@@ -20,3 +20,6 @@ ln -s ~/Documents/DEV/dotfiles/.tmux.conf ~/.tmux.conf
 
 rm ~/.wezterm.lua
 ln -s ~/Documents/DEV/dotfiles/.wezterm.lua ~/.wezterm.lua
+
+rm ~/.config/starship.toml
+ln -s ~/Documents/DEV/dotfiles/starship.toml ~/.config/starship.toml

@@ -31,6 +31,7 @@ return {
 				"prisma-language-server", -- Prisma ORM LSP
 				"bash-language-server", -- Bash LSP
 				"pyright", -- Python LSP
+				"taplo", -- TOML LSP
 
 				-- Formatters
 				"prettier", -- Formatter for Astro, HTML, CSS, Markdown, MDX, JavaScript, TypeScript, JSX, TSX, JSON

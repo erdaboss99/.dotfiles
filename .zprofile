@@ -31,5 +31,7 @@ alias nrs='npm run start'
 alias pt='npx playwright test'
 alias pts='npx playwright show-report'
 
+alias python='python3'
+
 alias g='lazygit'
 

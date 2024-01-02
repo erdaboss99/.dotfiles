@@ -8,6 +8,6 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!node_modules" -g "!.git" -g
 export FZF_CTRL_T_COMMAND="fd --type f --hidden --follow --exclude '{node_modules}'"
 export FZF_ALT_C_COMMAND="fd --type d --hidden --follow --exclude '{node_modules}'"
 
-NEWLINE=$'\n'
-PROMPT="%B%F{147}[%f%n%F{147} @ %f%m%F{147}] %(5~|%-1~/.../%2~|%3~) ${NEWLINE}  %f%b "
+eval "$(starship init zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+

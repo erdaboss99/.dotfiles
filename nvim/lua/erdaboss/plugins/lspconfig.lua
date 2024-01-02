@@ -116,5 +116,11 @@ return {
 			on_attach = on_attach,
 			capabilities = capabilities,
 		}
+
+		-- TOML LSP
+		lspconfig.taplo.setup {
+			on_attach = on_attach,
+			capabilities = capabilities,
+		}
 	end,
 }

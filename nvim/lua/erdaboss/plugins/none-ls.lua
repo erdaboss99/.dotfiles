@@ -21,7 +21,7 @@ return {
 				},
 
 				null_ls.builtins.formatting.prettier.with {
-					extra_filetypes = { "toml", "astro" },
+					extra_filetypes = { "astro" },
 					extra_args = { "--ignore-path", "./.prettierignore" },
 				},
 
@@ -32,6 +32,8 @@ return {
 
 				null_ls.builtins.formatting.shfmt,
 				null_ls.builtins.diagnostics.shellcheck,
+
+				null_ls.builtins.formatting.taplo,
 
 				null_ls.builtins.formatting.trim_whitespace.with {
 					filetypes = { "*" },

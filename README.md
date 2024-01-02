@@ -65,6 +65,11 @@ ln -s ~/Documents/DEV/dotfiles/.wezterm.lua ~/.wezterm.lua
 ```
 
 ```zsh
+# starship config
+ln -s ~/Documents/DEV/dotfiles/starship.toml ~/.config/starship.toml
+```
+
+```zsh
 # local scripts
 ln -s ~/Documents/DEV/dotfiles/scripts ~/.local/scripts
 ```

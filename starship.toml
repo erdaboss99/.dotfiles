@@ -1,0 +1,26 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """$os$username$directory$git_branch$git_metrics$fill$nodejs$python
+[ ](bold)"""
+
+add_newline = false
+
+[username]
+style_user = "bold fg:147"
+show_always = true
+
+[directory]
+truncation_length = 5
+truncate_to_repo = true
+style = "bold fg:147"
+
+[fill]
+symbol = " "
+
+[os]
+style = "bold"
+disabled = false
+symbols = { Macos = " " }
+
+[python]
+symbol = " "
