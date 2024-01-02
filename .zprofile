@@ -4,8 +4,9 @@ export OBSIDIAN_FOLDER="/Users/erdelyiroland/Library/Mobile Documents/iCloud~md~
 
 alias vim='nvim'
 alias nvimc='cd ~/.config/nvim; nvim .'
-alias dotc='cd ~/.dotfiles; nvim .'
+alias dotc='cd ~/Documents/DEV/dotfiles; nvim .'
 
+alias f='~/.local/scripts/tmux-sessionizer.sh'
 alias c='clear'
 alias l='colorls -al'
 alias r='source ~/.zshrc; clear'
@@ -20,7 +21,7 @@ alias ts='tmux new -s'
 
 alias dev='cd ~/Documents/DEV/; clear'
 alias dl='cd ~/Downloads/; clear'
-alias dot='cd ~/.dotfiles/; clear'
+alias dot='cd ~/Documents/DEV/dotfiles/; clear'
 alias obs='cd $OBSIDIAN_FOLDER; clear'
 
 alias nrd='npm run dev'

@@ -32,19 +32,19 @@ brew bundle
 
 ```zsh
 # zsh config
-ln -s ~/.dotfiles/root/.zshrc ~/.zshrc
-ln -s ~/.dotfiles/root/.zprofile ~/.zprofile
+ln -s ~/Documents/DEV/dotfiles/.zshrc ~/.zshrc
+ln -s ~/Documents/DEV/dotfiles/.zprofile ~/.zprofile
 ```
 
 ```zsh
 # fzf ignore
-ln -s ~/.dotfiles/root/.ignore ~/.ignore
+ln -s ~/Documents/DEV/dotfiles/.ignore ~/.ignore
 ```
 
 ```zsh
 # TMUX config
 # TPM is required! Install it from here https://github.com/tmux-plugins/tpm
-ln -s ~/.dotfiles/root/.tmux.conf ~/.tmux.conf
+ln -s ~/Documents/DEV/dotfiles/.tmux.conf ~/.tmux.conf
 ```
 
 ```zsh
@@ -56,10 +56,15 @@ ln -s ~/.dotfiles/nvchad/custom ~/.config/nvim/lua/custom
 
 ```zsh
 # NVIM config
-ln -s ~/.dotfiles/nvim ~/.config/nvim
+ln -s ~/Documents/DEV/dotfiles/nvim ~/.config/nvim
 ```
 
 ```zsh
 # wezterm config
-ln -s ~/.dotfiles/root/.wezterm.lua ~/.wezterm.lua
+ln -s ~/Documents/DEV/dotfiles/.wezterm.lua ~/.wezterm.lua
+```
+
+```zsh
+# local scripts
+ln -s ~/Documents/DEV/dotfiles/scripts ~/.local/scripts
 ```

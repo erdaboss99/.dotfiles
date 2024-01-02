@@ -1,4 +1,5 @@
 local wezterm = require "wezterm"
+local mux = wezterm.mux
 
 local super_vim_keys_map = {
 	s = utf8.char(0xAA), -- <CMD-s>
@@ -20,12 +21,17 @@ local function bind_super_key_to_vim(key)
 	}
 end
 
+wezterm.on("gui-startup", function(cmd)
+	local tab, pane, window = mux.spawn_window(cmd or {})
+	window:gui_window():maximize()
+end)
+
 return {
 	color_scheme = "Catppuccin Mocha",
 	enable_tab_bar = false,
 	font_size = 20.0,
 	macos_window_background_blur = 10,
-	window_background_opacity = 0.85,
+	window_background_opacity = 0.75,
 	font = wezterm.font_with_fallback {
 		{
 			family = "JetBrains Mono",
