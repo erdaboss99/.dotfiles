@@ -2,7 +2,7 @@ return {
 	"neovim/nvim-lspconfig",
 	lazy = false,
 	config = function()
-		local lspconfig = require "lspconfig"
+		local lspconf = require "lspconfig"
 
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		local on_attach = function()
@@ -18,8 +18,9 @@ return {
             vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic" })
 			-- stylua: ignore end
 		end
+
 		-- Lua LSP
-		lspconfig.lua_ls.setup {
+		lspconf.lua_ls.setup {
 			on_attach = on_attach,
 			capabilities = capabilities,
 			settings = {
@@ -32,61 +33,75 @@ return {
 		}
 
 		-- TypeScript, JavaScript, JSX and TSX LSP
-		lspconfig.tsserver.setup {
+		lspconf.tsserver.setup {
 			on_attach = on_attach,
 			capabilities = capabilities,
 		}
 
 		-- ESLint LSP
-		lspconfig.eslint.setup {
+		lspconf.eslint.setup {
 			on_attach = on_attach,
 			capabilities = capabilities,
 		}
 
 		-- Astro LSP
-		lspconfig.astro.setup {
+		lspconf.astro.setup {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		}
 
 		-- JSON LSP
-		lspconfig.jsonls.setup {
+		lspconf.jsonls.setup {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		}
 
 		-- HTML LSP
-		lspconfig.html.setup {
+		lspconf.html.setup {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		}
 
 		-- CSS LSP
-		lspconfig.cssls.setup {
+		lspconf.cssls.setup {
 			capabilities = capabilities,
 			on_attach = on_attach,
+			settings = {
+				css = {
+					validate = true,
+					lint = { unknownAtRules = "ignore" },
+				},
+				scss = {
+					validate = true,
+					lint = { unknownAtRules = "ignore" },
+				},
+				less = {
+					validate = true,
+					lint = { unknownAtRules = "ignore" },
+				},
+			},
 		}
 
 		-- TailwindCSS LSP
-		lspconfig.tailwindcss.setup {
+		lspconf.tailwindcss.setup {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		}
 
 		-- Markdown and MDX LSP
-		lspconfig.marksman.setup {
+		lspconf.marksman.setup {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		}
 
 		-- Prisma ORM LSP
-		lspconfig.prismals.setup {
+		lspconf.prismals.setup {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		}
 
 		-- Emmet LSP
-		lspconfig.emmet_ls.setup {
+		lspconf.emmet_ls.setup {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			filetypes = {
@@ -103,7 +118,7 @@ return {
 		}
 
 		-- Python LSP
-		lspconfig.pyright.setup {
+		lspconf.pyright.setup {
 			on_attach = on_attach,
 			capabilities = capabilities,
 			filetypes = {
@@ -112,13 +127,13 @@ return {
 		}
 
 		-- Bash (Shell) LSP
-		lspconfig.bashls.setup {
+		lspconf.bashls.setup {
 			on_attach = on_attach,
 			capabilities = capabilities,
 		}
 
 		-- TOML LSP
-		lspconfig.taplo.setup {
+		lspconf.taplo.setup {
 			on_attach = on_attach,
 			capabilities = capabilities,
 		}
