@@ -12,6 +12,7 @@ symbols = { Macos = " " }
 
 [username]
 style_user = "bold mauve"
+disabled = false
 show_always = true
 
 [directory]
@@ -34,7 +35,7 @@ style = "bold green"
 
 [time]
 format = "󰥔 [$time]($style) "
-disabled = false
+disabled = true
 style = "bold"
 
 [palettes.catppuccin_mocha]
