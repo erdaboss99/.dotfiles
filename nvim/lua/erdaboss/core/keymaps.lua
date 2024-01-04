@@ -11,19 +11,23 @@ local function keymap(modes, key, action, args)
 	end
 end
 
-keymap({ "n", "i" }, "<Char-0xAA>", "<ESC><CMD>w<CR>", { desc = "Save current buffer" }) -- <CMD-s>
-keymap({ "n", "i" }, "<C-s>", "<ESC><CMD>w<CR>", { desc = "Save current buffer" }) -- <Control-s>
-keymap({ "n", "i" }, "<C-q>", "<CMD>qa<CR>", { desc = "Attempt to quit all" })
+keymap({ "n", "i", "v" }, "<Char-0xAA>", "<ESC><CMD>w<CR>", { desc = "Save current buffer" }) -- <CMD-s>
+keymap({ "n", "i", "v" }, "<C-s>", "<ESC><CMD>w<CR>", { desc = "Save current buffer" }) -- <Control-s>
+keymap({ "n", "i", "v" }, "<C-q>", "<ESC><CMD>qa!<CR>", { desc = "Attempt to quit all" })
 
 keymap({ "n" }, "<TAB>", "<CMD>bnext<CR>", { desc = "Next buffer" })
-keymap({ "n" }, "<C-w>b", "<CMD>bd<CR>", { desc = "Delete buffer" })
+keymap({ "n" }, "<S-TAB>", "<CMD>bprev<CR>", { desc = "Previous buffer" })
+keymap({ "n" }, "<C-w>b", "<CMD>bd<CR>", { desc = "Close buffer" })
 
 keymap({ "i" }, "jk", "<ESC>", { desc = "Exit from insert mode" })
 keymap({ "i" }, "kj", "<ESC>", { desc = "Exit from insert mode" })
-keymap({ "n" }, "<C-c>", "<CMD>nohlsearch<CR>", { desc = "Clear search highlight" })
 
-keymap({ "n" }, "<C-j>", "<C-d>zz", { desc = "Scroll down half a page" })
-keymap({ "n" }, "<C-k>", "<C-u>zz", { desc = "Scroll up half a page" })
+keymap({ "n" }, "<C-c>", "<CMD>nohlsearch<CR>", { desc = "Clear search highlight" })
+keymap({ "n" }, "n", "nzzzv", { desc = "Keep next search term centered" })
+keymap({ "n" }, "N", "Nzzzv", { desc = "Keep previous search term centered" })
+
+keymap({ "n" }, "<C-d>", "<C-d>zz", { desc = "Scroll down half a page" })
+keymap({ "n" }, "<C-u>", "<C-u>zz", { desc = "Scroll up half a page" })
 keymap({ "n" }, "H", "^", { desc = "Jump to the first non-blank character of the line" })
 keymap({ "n" }, "L", "$", { desc = "Jump to the last character of the line" })
 
@@ -35,17 +39,8 @@ keymap({ "n" }, "cw", "ciw", { desc = "Change current word" })
 
 keymap({ "n" }, "J", "mzJ`z", { desc = "Join lines" })
 
-keymap({ "n" }, "<A-Down>", "<CMD>m .+1<CR>==", { desc = "Move line down" })
-keymap({ "n" }, "<A-Up>", "<CMD>m .-2<CR>==", { desc = "Move line up" })
-keymap({ "i" }, "<A-Down>", "<ESC><CMD>m .+1<CR>==gi", { desc = "Move line down" })
-keymap({ "i" }, "<A-Up>", "<ESC><CMD>m .-2<CR>==gi", { desc = "Move line up" })
-keymap({ "v" }, "<A-Down>", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
-keymap({ "v" }, "<A-Up>", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
-
-keymap({ "n" }, "<S-A-Up>", "yyP", { desc = "Duplicate line" })
-keymap({ "n" }, "<S-A-Down>", "yyp", { desc = "Duplicate line " })
-keymap({ "v" }, "<S-A-Up>", "yP", { desc = "Duplicate selected lines" })
-keymap({ "v" }, "<S-A-Down>", "yP", { desc = "Duplicate selected lines " })
+keymap({ "v" }, "J", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
+keymap({ "v" }, "K", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
 
 keymap({ "n" }, "<leader>lg", "<CMD>LazyGit<CR>", { desc = "Open LazyGit" })
 

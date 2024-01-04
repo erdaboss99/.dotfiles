@@ -1,5 +1,6 @@
 return {
 	"nvim-neotest/neotest",
+	disable = true,
 	event = "BufEnter *.spec.ts",
 	dependencies = {
 		"thenbe/neotest-playwright",
