@@ -31,6 +31,9 @@
   "workbench.tree.renderIndentGuides": "always",
   "workbench.statusBar.visible": true,
   "workbench.activityBar.location": "top",
+  "window.menuBarVisibility": "compact",
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
   "breadcrumbs.enabled": true,
   "update.showReleaseNotes": false,
 
@@ -41,7 +44,6 @@
     "*.mdx": "mdx"
   },
   "window.customMenuBarAltFocus": false,
-  "window.menuBarVisibility": "hidden",
 
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -133,6 +135,19 @@
   "vim.highlightedyank.enable": true,
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
+  "vim.statusBarColorControl": true,
+  "vim.statusBarColors.commandlineinprogress": ["#fa9c1b", "#ffffff"],
+  "vim.statusBarColors.insert": ["#009f5f", "#ffffff"],
+  "vim.statusBarColors.normal": ["#007acc", "#ffffff"],
+  "vim.statusBarColors.visual": ["#5f00af", "#ffffff"],
+  "vim.statusBarColors.visualline": ["#005f87", "#ffffff"],
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#005f87",
+    "statusBar.noFolderBackground": "#005f87",
+    "statusBar.debuggingBackground": "#005f87",
+    "statusBar.foreground": "#ffffff",
+    "statusBar.debuggingForeground": "#ffffff"
+  },
   "vim.handleKeys": {
     "<C-c>": true,
     "<C-d>": true,
@@ -142,8 +157,8 @@
     "<C-j>": true,
     "<C-k>": true,
     "<C-l>": true,
+    "<C-w>": true,
 
-    "<C-w>": false,
     "<C-p>": false,
     "<C-s>": false,
     "<C-b>": false,

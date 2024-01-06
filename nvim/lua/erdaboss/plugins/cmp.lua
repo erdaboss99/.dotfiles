@@ -29,8 +29,9 @@ return {
 		require("luasnip.loaders.from_vscode").lazy_load()
 
 		cmp.setup {
+			preselect = "none",
 			completion = {
-				completeopt = "menu,menuone,noselect,preview",
+				completeopt = "menu,menuone,noselect,noinsert,preview",
 			},
 			view = {
 				docs = {
@@ -56,11 +57,13 @@ return {
 			mapping = {
 				["<Up>"] = cmp.mapping.select_prev_item(),
 				["<Down>"] = cmp.mapping.select_next_item(),
+				["<C-k>"] = cmp.mapping.select_prev_item(),
+				["<C-j>"] = cmp.mapping.select_next_item(),
 				["<C-e>"] = cmp.mapping.close(),
 				["<C-Space>"] = cmp.mapping.complete(),
 				["<CR>"] = cmp.mapping.confirm {
 					behavior = cmp.ConfirmBehavior.Insert,
-					select = true,
+					select = false,
 				},
 				["<C-d>"] = function()
 					if cmp.visible_docs() then
