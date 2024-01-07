@@ -21,7 +21,7 @@ return {
 				},
 
 				null_ls.builtins.formatting.prettier.with {
-					extra_filetypes = { "astro" },
+					extra_filetypes = { "astro", "prisma" },
 					extra_args = { "--ignore-path", "./.prettierignore" },
 				},
 
@@ -31,7 +31,9 @@ return {
 				},
 
 				null_ls.builtins.formatting.shfmt,
-				null_ls.builtins.diagnostics.shellcheck,
+				null_ls.builtins.diagnostics.shellcheck.with {
+					disabled_filetypes = { "dotenv" },
+				},
 
 				null_ls.builtins.formatting.taplo,
 

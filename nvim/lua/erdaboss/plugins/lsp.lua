@@ -107,8 +107,8 @@ return {
 			filetypes = {
 				"astro",
 				"html",
-				"typescriptreact",
-				"javascriptreact",
+				-- "typescriptreact",
+				-- "javascriptreact",
 				"css",
 				"sass",
 				"scss",
